@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Stockhood — Seattle’s viral Ballard raccoon going viral all over socials rn and doing the rounds just like Pedro. Ticker: STOCKHOOD."
+      content="Stockhood ($STOCKHOOD) — Unlocking the next evolution of tokenized equities on Robinhood. Cross-chain trading with maximum liquidity and minimum friction."
     />
     <title>Stockhood — $STOCKHOOD</title>
+    <link rel="icon" href="logo.jpg" type="image/jpeg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="logo.png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chewy&family=Nunito:wght@500;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,365 +21,339 @@
         theme: {
           extend: {
             colors: {
-              pow: {
-                lime: "#C9FF38",
-                green: "#25C76F",
-                dark: "#102E22",
-                cream: "#FFFBE7",
-                peach: "#FFB076",
+              hood: {
+                lime: "#C8FF00",
+                glow: "#E8FF66",
+                forest: "#0A140C",
+                pine: "#132018",
+                moss: "#1B3D28",
+                mist: "#F4FFE8",
               },
             },
             fontFamily: {
-              display: ["Chewy", "cursive"],
-              body: ["Nunito", "sans-serif"],
-            },
-            boxShadow: {
-              sticker: "6px 7px 0 #102E22",
-              "sticker-sm": "3px 4px 0 #102E22",
+              display: ["Bebas Neue", "sans-serif"],
+              body: ["Manrope", "sans-serif"],
             },
           },
         },
       };
     </script>
     <style>
+      :root {
+        --lime: #c8ff00;
+        --forest: #0a140c;
+        --pine: #132018;
+        --moss: #1b3d28;
+        --mist: #f4ffe8;
+      }
+
       html {
         scroll-behavior: smooth;
       }
+
       body {
-        background-color: #fffbe7;
-        background-image: radial-gradient(#25c76f22 1.5px, transparent 1.5px);
-        background-size: 24px 24px;
-      }
-      .float {
-        animation: float 4s ease-in-out infinite;
-      }
-      .marquee-track {
-        animation: marquee 20s linear infinite;
-      }
-      .comic-lines {
-        background: repeating-conic-gradient(
-          from 0deg,
-          #c9ff38 0deg 2deg,
-          transparent 2deg 12deg
-        );
-      }
-      .star-hover {
-        position: relative;
-        isolation: isolate;
-      }
-      .star-hover::before,
-      .star-hover::after {
-        position: absolute;
-        z-index: 30;
-        pointer-events: none;
-        color: #c9ff38;
-        opacity: 0;
-        filter: drop-shadow(0 0 4px #fff);
-        text-shadow: 0 0 8px #fff;
-        transition: opacity 0.18s ease;
-      }
-      .star-hover::before {
-        content: "✦";
-        left: 8%;
-        top: 8%;
-        font-size: 1.6rem;
-      }
-      .star-hover::after {
-        content: "★";
-        right: 7%;
-        bottom: 8%;
-        font-size: 1.2rem;
-        color: #fff;
-      }
-      .star-hover:hover::before {
-        opacity: 1;
-        animation: shine-left 0.8s ease-in-out infinite alternate;
-      }
-      .star-hover:hover::after {
-        opacity: 1;
-        animation: shine-right 0.65s 0.12s ease-in-out infinite alternate;
+        background: var(--forest);
+        color: var(--mist);
+        overflow-x: hidden;
       }
 
-      /* Hero banner polish */
-      .hero-banner {
-        animation: banner-bob 6s ease-in-out infinite;
-      }
-      .logo-pop {
-        animation: logo-pop 3.2s ease-in-out infinite;
-      }
-      .sparkle {
-        animation: sparkle 2.4s ease-in-out infinite;
-      }
-      .meme-tilt {
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
-      }
-      .meme-tilt:hover {
-        transform: rotate(0deg) translateY(-8px) scale(1.02);
-        box-shadow: 10px 12px 0 #102e22;
-      }
-      .tok-ring {
-        width: min(100%, 280px);
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: conic-gradient(
-          #25c76f 0deg 360deg
-        );
-        display: grid;
-        place-items: center;
-        box-shadow:
-          0 0 0 6px #102e22,
-          8px 10px 0 #102e22;
-        position: relative;
-      }
-      .tok-ring-inner {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        background: #fffbe7;
-        width: 64%;
-        height: 64%;
-        border-radius: 50%;
-        border: 4px solid #102e22;
-        display: grid;
-        place-content: center;
-      }
-      .tok-ring::before {
-        display: none;
-      }
-      .buy-card {
-        position: relative;
-        overflow: visible;
-        transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
-      }
-      .buy-card::before {
+      body::before {
         content: "";
-        position: absolute;
-        inset: -40% auto auto -20%;
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        background: radial-gradient(circle, #c9ff3840, transparent 70%);
-        opacity: 0;
-        transition: opacity 0.35s ease;
+        position: fixed;
+        inset: 0;
         pointer-events: none;
         z-index: 0;
+        background:
+          radial-gradient(ellipse 80% 50% at 70% 0%, #1b3d2866, transparent 55%),
+          radial-gradient(ellipse 60% 40% at 10% 80%, #c8ff0010, transparent 50%),
+          linear-gradient(180deg, #0a140c 0%, #0d1a10 40%, #0a140c 100%);
       }
-      .buy-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 18px 0 #0a1f17, 0 0 40px #c9ff3822;
-        background: #1d4d3a;
-      }
-      .buy-card:hover::before {
-        opacity: 1;
-      }
-      .buy-card > *:not(.buy-step-num):not(.buy-connector) {
+
+      body > * {
         position: relative;
         z-index: 1;
       }
-      .buy-icon {
-        width: 72px;
-        height: 72px;
-        border-radius: 1.25rem;
-        border: 3px solid #102e22;
+
+      .forest-grid {
+        background-image:
+          linear-gradient(#c8ff0008 1px, transparent 1px),
+          linear-gradient(90deg, #c8ff0008 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
+
+      .hero {
+        min-height: 100svh;
+        display: grid;
+        align-items: end;
+      }
+
+      .hero-plane {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+
+      .hero-plane img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        transform: scale(1.04);
+        animation: hero-drift 18s ease-in-out infinite alternate;
+      }
+
+      .hero-veil {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, #0a140ccc 0%, #0a140c66 35%, #0a140ce8 78%, #0a140c 100%),
+          linear-gradient(90deg, #0a140cee 0%, #0a140c55 55%, #0a140caa 100%);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding-bottom: clamp(2.5rem, 8vh, 5rem);
+      }
+
+      .brand-mark {
+        letter-spacing: 0.04em;
+        text-shadow: 0 0 40px #c8ff0044;
+      }
+
+      .lime-rule {
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--lime), transparent);
+      }
+
+      .btn-lime {
+        background: var(--lime);
+        color: var(--forest);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 0 0 0 #c8ff0044;
+      }
+
+      .btn-lime:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 40px #c8ff0033;
+      }
+
+      .btn-ghost {
+        border: 1px solid #c8ff0055;
+        background: #0a140c88;
+        backdrop-filter: blur(8px);
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+
+      .btn-ghost:hover {
+        border-color: var(--lime);
+        background: #c8ff0014;
+        transform: translateY(-3px);
+      }
+
+      .marquee-track {
+        animation: marquee 28s linear infinite;
+      }
+
+      .section-label {
+        color: var(--lime);
+        letter-spacing: 0.28em;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .meme-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #c8ff0028;
+        background: #132018aa;
+        transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      }
+
+      .meme-card:hover {
+        transform: translateY(-6px);
+        border-color: #c8ff0088;
+        box-shadow: 0 20px 50px #00000066, 0 0 30px #c8ff0018;
+      }
+
+      .meme-card img {
+        transition: transform 0.5s ease;
+      }
+
+      .meme-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .stat-panel {
+        border: 1px solid #c8ff0028;
+        background: linear-gradient(160deg, #132018ee, #0a140cee);
+      }
+
+      .tok-ring {
+        width: min(100%, 240px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: conic-gradient(var(--lime) 0deg 360deg);
         display: grid;
         place-items: center;
-        background: #fffbe7;
-        box-shadow: 4px 5px 0 #102e22;
-        transition: transform 0.35s ease;
-        overflow: hidden;
-        flex-shrink: 0;
+        box-shadow: 0 0 40px #c8ff0022, 0 0 0 1px #c8ff0044;
       }
-      .buy-card:hover .buy-icon {
-        transform: scale(1.08) rotate(-4deg);
+
+      .tok-ring-inner {
+        width: 72%;
+        height: 72%;
+        border-radius: 50%;
+        background: var(--forest);
+        border: 1px solid #c8ff0033;
+        display: grid;
+        place-content: center;
+        text-align: center;
       }
-      .buy-icon img,
-      .buy-icon svg {
-        width: 48px;
-        height: 48px;
-        object-fit: contain;
-        display: block;
+
+      .buy-step {
+        border: 1px solid #c8ff0022;
+        background: linear-gradient(180deg, #1b3d2844, #0a140caa);
+        transition: border-color 0.3s ease, transform 0.3s ease;
       }
-      .buy-icon.buy-icon-fill {
-        padding: 0;
-        background: transparent;
+
+      .buy-step:hover {
+        border-color: #c8ff0066;
+        transform: translateY(-4px);
       }
-      .buy-icon.buy-icon-fill img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .buy-icon.buy-icon-logo {
-        padding: 0;
-      }
-      .buy-icon.buy-icon-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .buy-connector {
-        display: none;
-      }
-      @media (min-width: 1280px) {
-        .buy-connector {
-          display: block;
-          position: absolute;
-          top: 50%;
-          right: -1.15rem;
-          width: 1.8rem;
-          height: 4px;
-          background: repeating-linear-gradient(
-            90deg,
-            #c9ff38 0 8px,
-            transparent 8px 14px
-          );
-          transform: translateY(-50%);
-          z-index: 5;
-        }
-        .buy-connector::after {
-          content: "▶";
-          position: absolute;
-          right: -10px;
-          top: 50%;
-          transform: translateY(-50%);
-          color: #c9ff38;
-          font-size: 10px;
-        }
-      }
-      .buy-step-num {
-        position: absolute !important;
-        z-index: 20 !important;
-        display: grid !important;
-        place-items: center;
-        animation: logo-pop 3s ease-in-out infinite;
-        line-height: 1;
-      }
+
       .reveal {
         opacity: 0;
-        transform: translateY(24px);
-        transition: opacity 0.7s ease, transform 0.7s ease;
+        transform: translateY(28px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
       }
+
       .reveal.visible {
         opacity: 1;
         transform: translateY(0);
       }
 
-      /* Jimothy   */
-      .paw-stamp {
+      /* Arrow stamp (replaces paw) */
+      .arrow-stamp {
         position: fixed;
         z-index: 9998;
         pointer-events: none;
-        width: 48px;
-        height: 48px;
+        width: 52px;
+        height: 52px;
         opacity: 0;
-        transform: translate(-50%, -50%) scale(0.3) rotate(var(--rot, 0deg));
-        filter: drop-shadow(2px 3px 0 #102e22);
-        animation: stamp-in 1.6s ease-out forwards;
+        transform: translate(-50%, -50%) scale(0.3) rotate(var(--rot, -35deg));
+        filter: drop-shadow(0 0 8px #c8ff00aa);
+        animation: arrow-stamp-in 1.35s ease-out forwards;
+        color: var(--lime);
       }
-      .paw-stamp svg {
+
+      .arrow-stamp svg {
         width: 100%;
         height: 100%;
       }
 
-      #cat-cursor {
+      #aim-cursor {
         position: fixed;
         left: 0;
         top: 0;
         z-index: 9999;
         display: none;
         pointer-events: none;
-        width: 34px;
-        height: 34px;
+        width: 28px;
+        height: 28px;
         transform: translate(-50%, -50%);
-        filter: drop-shadow(2px 3px 0 #fff) drop-shadow(0 0 1px #102e22);
+        filter: drop-shadow(0 0 6px #c8ff00aa);
         transition: width 0.12s ease, height 0.12s ease, transform 0.08s ease;
       }
-      #cat-cursor.is-hovering {
-        width: 42px;
-        height: 42px;
-        transform: translate(-50%, -50%) rotate(-10deg);
-      }
-      #cat-cursor.is-press {
-        transform: translate(-50%, -50%) scale(0.8);
+
+      #aim-cursor.is-hovering {
+        width: 36px;
+        height: 36px;
+        transform: translate(-50%, -50%) rotate(-18deg) scale(1.1);
       }
 
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
+      #aim-cursor.is-press {
+        transform: translate(-50%, -50%) scale(0.75);
+      }
+
+      .pulse-dot {
+        animation: pulse-dot 1.8s ease-in-out infinite;
+      }
+
+      .float-slow {
+        animation: float-slow 5.5s ease-in-out infinite;
+      }
+
+      .logo-glow {
+        animation: logo-glow 3.5s ease-in-out infinite;
+      }
+
+      @keyframes hero-drift {
+        from {
+          transform: scale(1.04) translateY(0);
         }
-        50% {
-          transform: translateY(-12px);
+        to {
+          transform: scale(1.08) translateY(-1.5%);
         }
       }
+
       @keyframes marquee {
         to {
           transform: translateX(-50%);
         }
       }
-      @keyframes shine-left {
-        from {
-          transform: scale(0.4) rotate(0deg);
-        }
-        to {
-          transform: scale(1.25) rotate(90deg);
-        }
-      }
-      @keyframes shine-right {
-        from {
-          transform: scale(0.5) rotate(15deg);
-        }
-        to {
-          transform: scale(1.35) rotate(-45deg);
-        }
-      }
-      @keyframes banner-bob {
+
+      @keyframes float-slow {
         0%,
         100% {
-          transform: rotate(-1deg) translateY(0);
+          transform: translateY(0);
         }
         50% {
-          transform: rotate(1deg) translateY(-8px);
+          transform: translateY(-10px);
         }
       }
-      @keyframes logo-pop {
+
+      @keyframes logo-glow {
         0%,
         100% {
-          transform: scale(1) rotate(-2deg);
+          box-shadow: 0 0 0 0 #c8ff0033;
         }
         50% {
-          transform: scale(1.06) rotate(2deg);
+          box-shadow: 0 0 28px 4px #c8ff0044;
         }
       }
-      @keyframes sparkle {
+
+      @keyframes pulse-dot {
         0%,
         100% {
-          opacity: 0.4;
-          transform: scale(0.8) rotate(0deg);
-        }
-        50% {
           opacity: 1;
-          transform: scale(1.2) rotate(20deg);
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.55;
+          transform: scale(0.85);
         }
       }
-      @keyframes stamp-in {
+
+      @keyframes arrow-stamp-in {
         0% {
           opacity: 0;
-          transform: translate(-50%, -50%) scale(0.2) rotate(var(--rot, 0deg));
+          transform: translate(-50%, -50%) scale(0.15) rotate(var(--rot, -35deg));
         }
-        14% {
+        16% {
           opacity: 1;
-          transform: translate(-50%, -50%) scale(1.2) rotate(var(--rot, 0deg));
+          transform: translate(-50%, -50%) scale(1.25) rotate(var(--rot, -35deg));
         }
-        28% {
-          transform: translate(-50%, -50%) scale(0.95) rotate(var(--rot, 0deg));
+        32% {
+          transform: translate(-50%, -50%) scale(0.92) rotate(var(--rot, -35deg));
         }
-        40% {
-          opacity: 0.9;
-          transform: translate(-50%, -50%) scale(1) rotate(var(--rot, 0deg));
+        48% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1) rotate(var(--rot, -35deg));
         }
         100% {
           opacity: 0;
-          transform: translate(-50%, -56%) scale(1) rotate(var(--rot, 0deg));
+          transform: translate(-50%, -70%) scale(1.05) rotate(calc(var(--rot, -35deg) + 12deg));
         }
       }
 
@@ -389,10 +363,11 @@
         button {
           cursor: none !important;
         }
-        #cat-cursor {
+        #aim-cursor {
           display: block;
         }
       }
+
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -404,502 +379,363 @@
       }
     </style>
   </head>
-  <body class="font-body text-pow-dark selection:bg-pow-lime">
+  <body class="font-body selection:bg-hood-lime selection:text-hood-forest">
     <header
-      class="sticky top-0 z-50 border-b-2 border-pow-dark bg-pow-cream/90 backdrop-blur-md"
+      class="sticky top-0 z-50 border-b border-hood-lime/15 bg-hood-forest/80 backdrop-blur-xl"
     >
       <nav
         class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6"
       >
-        <a href="#top" class="flex items-center gap-2" aria-label="Stockhood home">
+        <a href="#top" class="flex items-center gap-3" aria-label="Stockhood home">
           <span
-            class="logo-pop relative grid h-11 w-11 place-items-center overflow-hidden rounded-full border-2 border-pow-dark bg-pow-lime shadow-sticker-sm"
+            class="logo-glow relative grid h-10 w-10 place-items-center overflow-hidden rounded-xl border border-hood-lime/40 bg-hood-lime"
           >
             <img
-              src="logo.png"
+              src="logo.jpg"
               alt="Stockhood logo"
-              class="absolute inset-0 h-full w-full object-cover"
+              class="h-full w-full object-cover"
             />
           </span>
-          <span class="font-display text-2xl tracking-wide sm:text-3xl"
+          <span class="font-display text-2xl tracking-wide text-hood-mist sm:text-3xl"
             >STOCKHOOD</span
           >
         </a>
-        <div class="hidden items-center gap-6 font-extrabold lg:flex xl:gap-7">
-          <a
-            href="#story"
-            class="transition hover:-rotate-2 hover:text-pow-green"
-            >Lore</a
-          >
-          <a
-            href="#memes"
-            class="transition hover:rotate-2 hover:text-pow-green"
-            >Memes</a
-          >
-          <a
-            href="#tokenomics"
-            class="transition hover:-rotate-2 hover:text-pow-green"
-            >Tokenomics</a
-          >
-          <a
-            href="#how-to-buy"
-            class="transition hover:rotate-2 hover:text-pow-green"
-            >Buy</a
-          >
-          <a
-            href="#chart"
-            class="transition hover:-rotate-2 hover:text-pow-green"
-            >Chart</a
-          >
+        <div
+          class="hidden items-center gap-7 text-sm font-bold uppercase tracking-wider text-hood-mist/70 lg:flex"
+        >
+          <a href="#about" class="transition hover:text-hood-lime">About</a>
+          <a href="#memes" class="transition hover:text-hood-lime">Memes</a>
+          <a href="#tokenomics" class="transition hover:text-hood-lime">Tokenomics</a>
+          <a href="#how-to-buy" class="transition hover:text-hood-lime">Buy</a>
+          <a href="#chart" class="transition hover:text-hood-lime">Chart</a>
         </div>
         <a
           href="https://app.uniswap.org/swap?chain=robinhood&outputCurrency=0xcomingsoon"
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-full border-2 border-pow-dark bg-pow-lime px-5 py-2 font-black shadow-sticker-sm transition hover:-translate-y-1 hover:shadow-sticker"
+          class="btn-lime rounded-full px-5 py-2.5 text-sm font-extrabold uppercase tracking-wide"
         >
-          BUY $STOCKHOOD
+          Buy $STOCKHOOD
         </a>
       </nav>
     </header>
 
     <main id="top">
-      <section
-        class="relative overflow-hidden px-4 pb-24 pt-14 sm:px-6 lg:pb-32 lg:pt-20"
-      >
-        <div
-          class="comic-lines absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full opacity-50"
-        ></div>
-        <div
-          class="comic-lines absolute -bottom-48 -left-32 h-[420px] w-[420px] rounded-full opacity-30"
-        ></div>
+      <!-- HERO: full-bleed banner -->
+      <section class="hero relative overflow-hidden">
+        <div class="hero-plane" aria-hidden="true">
+          <img src="banner.jpg" alt="" />
+          <div class="hero-veil"></div>
+        </div>
 
-        <div
-          class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_.95fr]"
-        >
-          <div class="relative z-10 text-center lg:text-left">
+        <div class="hero-content mx-auto w-full max-w-7xl px-4 sm:px-6">
+          <div class="max-w-3xl">
             <div
-              class="mb-5 inline-flex rotate-[-2deg] items-center gap-2 rounded-full border-2 border-pow-dark bg-white px-4 py-2 font-black shadow-sticker-sm"
+              class="mb-5 inline-flex items-center gap-2 rounded-full border border-hood-lime/30 bg-hood-forest/50 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.22em] text-hood-lime backdrop-blur-md"
             >
-              <span
-                class="h-3 w-3 animate-pulse rounded-full bg-pow-green"
-              ></span>
-              LIVE ON ROBINHOOD CHAIN
+              <span class="pulse-dot h-2 w-2 rounded-full bg-hood-lime"></span>
+              Live on Robinhood Chain
             </div>
+
+            <div class="mb-4 flex items-center gap-4">
+              <img
+                src="logo.jpg"
+                alt=""
+                class="float-slow h-16 w-16 rounded-2xl border border-hood-lime/50 shadow-[0_0_30px_#c8ff0033] sm:h-20 sm:w-20"
+                aria-hidden="true"
+              />
+              <p class="font-display brand-mark text-6xl leading-none text-hood-lime sm:text-7xl lg:text-8xl">
+                Stockhood
+              </p>
+            </div>
+
             <h1
-              class="font-display text-5xl leading-[.9] sm:text-6xl lg:text-[6.5rem]"
+              class="font-display text-4xl leading-[0.95] tracking-wide text-hood-mist sm:text-5xl lg:text-6xl"
             >
-              <span class="relative inline-block text-pow-green"
-                >STOCKHOOD<span
-                  class="sparkle absolute -right-8 -top-5 rotate-12 text-4xl text-pow-peach"
-                  >★</span
-                ></span
-              >
+              Aim for every stock
             </h1>
+
             <p
-              class="mx-auto mt-7 max-w-xl text-xl font-bold leading-relaxed lg:mx-0 lg:text-2xl"
+              class="mt-5 max-w-xl text-base font-semibold leading-relaxed text-hood-mist/80 sm:text-lg"
             >
-              Jimothy — Seattle’s Ballard legend — is going viral
-              all over socials rn and is doing the rounds
-              <span class="rounded bg-pow-lime px-2">just like Pedro</span>.
-              Short torso. Long vibes. Click anywhere to drop a
-              <span class="rounded bg-pow-peach px-2">paw stamp</span>.
+              Unlocking the next evolution of tokenized equities on Robinhood.
+              Cross-chain trading with maximum liquidity and minimum friction.
             </p>
-            <div
-              class="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start"
-            >
+
+            <div class="mt-8 flex flex-wrap gap-3">
               <a
                 href="https://app.uniswap.org/swap?chain=robinhood&outputCurrency=0xcomingsoon"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 rounded-2xl border-2 border-pow-dark bg-pow-green px-7 py-4 text-lg font-black text-white shadow-sticker transition hover:-translate-y-1"
+                class="btn-lime inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-extrabold uppercase tracking-wide"
               >
-                <span class="text-2xl">🏹</span> BUY NOW
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M4 16 L12 6 L15 11 L20 4"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M16 4 H20 V8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+                Buy Now
               </a>
               <a
                 href="https://dexscreener.com/robinhood/0xcomingsoon"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 rounded-2xl border-2 border-pow-dark bg-white px-7 py-4 text-lg font-black shadow-sticker transition hover:-translate-y-1"
+                class="btn-ghost inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-extrabold uppercase tracking-wide text-hood-mist"
               >
-                CHART <span aria-hidden="true">↗</span>
+                Live Chart ↗
               </a>
             </div>
-          </div>
 
-          <div class="relative mx-auto w-full max-w-xl">
-            <!-- Meme collage -->
-            <div class="relative mx-auto aspect-square max-w-lg">
-              <div
-                class="float absolute left-[8%] top-[6%] z-20 h-[38%] w-[38%] overflow-hidden rounded-[1.4rem] border-[3px] border-pow-dark bg-pow-lime shadow-sticker rotate-[-12deg]"
-              >
-                <img
-                  src="memes/meme-target.png"
-                  alt="Viral target meme"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <div
-                class="absolute bottom-[4%] left-[2%] z-10 h-[42%] w-[42%] overflow-hidden rounded-[1.4rem] border-[3px] border-pow-dark bg-pow-peach shadow-sticker rotate-[8deg]"
-              >
-                <img
-                  src="memes/meme-wanted.png"
-                  alt="Wanted meme"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <div
-                class="hero-banner absolute right-[2%] top-[10%] z-30 h-[72%] w-[68%] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-pow-green p-2 shadow-[10px_12px_0_#102E22] rotate-[3deg] sm:rounded-[2.5rem] sm:p-3"
-              >
-                <div
-                  class="relative h-full overflow-hidden rounded-[1.5rem] bg-[#dfffb2] sm:rounded-[1.9rem]"
-                >
-                  <img
-                    src="memes/meme-selfie.png"
-                    alt="Jimothy doing the rounds selfie"
-                    class="absolute inset-0 h-full w-full object-cover transition duration-500 hover:scale-105"
-                  />
-                </div>
-              </div>
-              <div
-                class="logo-pop absolute -right-1 bottom-[18%] z-40 h-16 w-16 overflow-hidden rounded-full border-[3px] border-pow-dark shadow-sticker-sm sm:h-20 sm:w-20"
-              >
-                <img
-                  src="logo.png"
-                  alt=""
-                  class="h-full w-full object-cover"
-                  aria-hidden="true"
-                />
-              </div>
-            </div>
-            <span
-              class="absolute -bottom-6 right-2 z-40 rotate-6 rounded-xl border-2 border-pow-dark bg-pow-peach px-5 py-2 font-display text-2xl shadow-sticker-sm sm:-bottom-8 sm:right-4"
-              >ticker: STOCKHOOD</span
-            >
-            <span
-              class="sparkle absolute right-[8%] top-2 z-40 rotate-12 font-display text-3xl text-pow-green sm:text-4xl"
-              >✦</span
-            >
+            <p class="mt-6 font-display text-2xl tracking-widest text-hood-lime/90">
+              Ticker: STOCKHOOD
+            </p>
           </div>
         </div>
       </section>
 
-      <div class="overflow-hidden border-y-2 border-pow-dark bg-pow-lime py-4">
+      <!-- Marquee -->
+      <div class="overflow-hidden border-y border-hood-lime/20 bg-hood-lime py-3 text-hood-forest">
         <div
-          class="marquee-track flex w-max whitespace-nowrap font-display text-2xl"
+          class="marquee-track flex w-max whitespace-nowrap font-display text-2xl tracking-wide sm:text-3xl"
         >
           <span
-            STOCKHOOD &nbsp; ★ &nbsp; JUST LIKE PEDRO &nbsp; ★ &nbsp;
-            HOT STOCKHOOD SUMMER &nbsp; ★ &nbsp; BALLARD LEGEND &nbsp; ★ &nbsp;
-            TICKER: STOCKHOOD &nbsp; ★ &nbsp;&nbsp;</span
+            >STOCKHOOD &nbsp;◆&nbsp; AIM FOR EVERY STOCK &nbsp;◆&nbsp; TOKENIZED
+            EQUITIES &nbsp;◆&nbsp; CROSS-CHAIN LIQUIDITY &nbsp;◆&nbsp; TRUST LAYER
+            &nbsp;◆&nbsp; ON-CHAIN vs REAL &nbsp;◆&nbsp; TICKER: STOCKHOOD
+            &nbsp;◆&nbsp;&nbsp;</span
           >
           <span aria-hidden="true"
-            >STOCKHOOD &nbsp; ★ &nbsp; JUST LIKE PEDRO &nbsp; ★ &nbsp;
-            HOT STOCKHOOD SUMMER &nbsp; ★ &nbsp; BALLARD LEGEND &nbsp; ★ &nbsp;
-            TICKER: STOCKHOOD &nbsp; ★ &nbsp;&nbsp;</span
+            >STOCKHOOD &nbsp;◆&nbsp; AIM FOR EVERY STOCK &nbsp;◆&nbsp; TOKENIZED
+            EQUITIES &nbsp;◆&nbsp; CROSS-CHAIN LIQUIDITY &nbsp;◆&nbsp; TRUST LAYER
+            &nbsp;◆&nbsp; ON-CHAIN vs REAL &nbsp;◆&nbsp; TICKER: STOCKHOOD
+            &nbsp;◆&nbsp;&nbsp;</span
           >
         </div>
       </div>
 
-      <section id="story" class="overflow-hidden px-4 py-24 sm:px-6 lg:py-28">
-        <div class="mx-auto max-w-6xl">
-          <div class="grid items-center gap-16 lg:grid-cols-2 lg:gap-14">
-            <div class="reveal relative order-2 pb-10 lg:order-1 lg:pb-6">
-              <!-- Lore meme stack -->
-              <div class="relative mx-auto max-w-md lg:max-w-none">
-                <div
-                  class="relative z-20 rotate-[-3deg] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-white p-2.5 shadow-sticker sm:rounded-[2.5rem] sm:p-3"
-                >
-                  <div
-                    class="relative aspect-square overflow-hidden rounded-[1.5rem] bg-[#dfffb2] sm:rounded-[1.9rem]"
-                  >
-                    <img
-                      src="memes/meme-laptop.png"
-                      alt="Jimothy going viral on laptop"
-                      class="absolute inset-0 h-full w-full object-cover transition duration-500 hover:scale-105"
-                    />
-                  </div>
-                  <div class="flex items-center justify-between px-2 pb-1 pt-3 sm:px-3 sm:pt-4">
-                    <div>
-                    <p class="font-black">The Daily Jimothy</p>
-                    <p class="text-sm font-bold opacity-60">
-                      Ballard legend · hot Jimothy summer
-                    </p>
-                    </div>
-                    <span
-                      class="grid h-11 w-11 place-items-center overflow-hidden rounded-full border-2 border-pow-dark bg-pow-lime"
-                    >
-                      <img
-                        src="logo.png"
-                        alt=""
-                        class="h-full w-full object-cover"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </div>
-                </div>
-
-                <div
-                  class="absolute -left-3 -top-6 z-30 w-[38%] overflow-hidden rounded-2xl border-[3px] border-pow-dark shadow-sticker-sm rotate-[-14deg] sm:-left-6 sm:-top-8"
-                >
-                  <img
-                    src="memes/meme-pedro.png"
-                    alt="Just Like Pedro"
-                    class="aspect-square w-full object-cover"
-                  />
-                </div>
-                <div
-                  class="absolute -bottom-4 -right-2 z-30 w-[36%] overflow-hidden rounded-2xl border-[3px] border-pow-dark shadow-sticker-sm rotate-[10deg] sm:-bottom-6 sm:-right-5"
-                >
-                  <img
-                    src="memes/meme-moon.png"
-                    alt="Moon mission meme"
-                    class="aspect-square w-full object-cover"
-                  />
-                </div>
-              </div>
-              <span
-                class="absolute -bottom-8 left-1/2 z-40 -translate-x-1/2 rotate-6 rounded-xl border-2 border-pow-dark bg-pow-peach px-4 py-2 font-display text-xl shadow-sticker-sm sm:-bottom-5 sm:left-auto sm:right-8 sm:translate-x-0"
-                >JUST LIKE PEDRO!</span
+      <!-- ABOUT -->
+      <section id="about" class="forest-grid px-4 py-24 sm:px-6 lg:py-28">
+        <div class="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
+          <div class="reveal order-2 lg:order-1">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <div
+                class="overflow-hidden rounded-3xl border border-hood-lime/30 shadow-[0_0_60px_#c8ff0018]"
               >
-            </div>
-            <div class="reveal order-1 lg:order-2">
-              <p class="font-display text-2xl text-pow-green">THE LORE</p>
-              <h2 class="mt-2 font-display text-5xl sm:text-7xl">
-                Stockhood.<br />Doing the rounds.
-              </h2>
-              <p class="mt-6 text-lg font-bold leading-relaxed opacity-80">
-                Spotted in Seattle’s Ballard neighborhood and named Jimothy
-                because he looked like a Jimothy — the short-spined raccoon
-                blasted across socials with millions of views. Now he’s
-                Stockhood on Robinhood Chain: going viral rn and doing
-                the rounds just like Pedro. Hot Jimothy summer starts here.
-              </p>
-              <div class="mt-7 flex flex-wrap gap-3 font-black">
-                <span
-                  class="rounded-full border-2 border-pow-dark bg-pow-lime px-4 py-2"
-                  >✓ BALLARD LEGEND</span
-                >
-                <span
-                  class="rounded-full border-2 border-pow-dark bg-pow-peach px-4 py-2"
-                  >✓ JUST LIKE PEDRO</span
-                >
-                <span
-                  class="rounded-full border-2 border-pow-dark bg-white px-4 py-2"
-                  >✓ HOT STOCKHOOD SUMMER</span
-                >
+                <img
+                  src="memes/meme-unlock.png"
+                  alt="Unlocking tokenized equities"
+                  class="aspect-square w-full object-cover"
+                />
               </div>
+              <div
+                class="absolute -bottom-6 -right-4 w-[42%] overflow-hidden rounded-2xl border border-hood-lime/40 shadow-xl rotate-6 sm:-right-8"
+              >
+                <img
+                  src="memes/meme-price.png"
+                  alt="On-chain vs real market price"
+                  class="aspect-square w-full object-cover"
+                />
+              </div>
+              <div
+                class="absolute -left-3 -top-5 w-[36%] overflow-hidden rounded-2xl border border-hood-lime/40 shadow-xl -rotate-12 sm:-left-6"
+              >
+                <img
+                  src="memes/meme-aim.png"
+                  alt="Aim for every stock"
+                  class="aspect-square w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal order-1 lg:order-2">
+            <p class="section-label">The Thesis</p>
+            <h2 class="mt-3 font-display text-5xl tracking-wide text-hood-mist sm:text-6xl lg:text-7xl">
+              The multi-chain<br />
+              <span class="text-hood-lime">trust layer</span>
+            </h2>
+            <div class="lime-rule my-6 w-24"></div>
+            <p class="text-lg font-semibold leading-relaxed text-hood-mist/75">
+              Unlocking the next evolution of tokenized equities on Robinhood.
+              Cross-chain trading with maximum liquidity and minimum friction.
+            </p>
+            <p class="mt-4 text-lg font-semibold leading-relaxed text-hood-mist/75">
+              The multi-chain trust layer for tokenized stocks. On-chain price vs
+              real market price, live.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3 text-xs font-extrabold uppercase tracking-wider">
+              <span
+                class="rounded-full border border-hood-lime/30 bg-hood-lime/10 px-4 py-2 text-hood-lime"
+                >Tokenized Equities</span
+              >
+              <span
+                class="rounded-full border border-hood-lime/30 bg-hood-pine px-4 py-2 text-hood-mist"
+                >Cross-Chain</span
+              >
+              <span
+                class="rounded-full border border-hood-lime/30 bg-hood-pine px-4 py-2 text-hood-mist"
+                >Live Price Feed</span
+              >
             </div>
           </div>
         </div>
       </section>
 
-      <!-- MEME GALLERY -->
+      <!-- MEMES -->
       <section
         id="memes"
-        class="border-y-2 border-pow-dark bg-white/60 px-4 py-24 sm:px-6"
+        class="border-y border-hood-lime/15 bg-hood-pine/40 px-4 py-24 sm:px-6"
       >
         <div class="mx-auto max-w-7xl">
-          <div class="reveal mx-auto max-w-3xl text-center">
-            <p class="font-display text-2xl text-pow-green">MEME ARCHIVE</p>
-            <h2 class="mt-2 font-display text-5xl sm:text-7xl">
-              Jimothy doing the rounds
+          <div class="reveal mx-auto max-w-2xl text-center">
+            <p class="section-label justify-center">Meme Arsenal</p>
+            <h2 class="mt-3 font-display text-5xl tracking-wide sm:text-6xl lg:text-7xl">
+              Share the <span class="text-hood-lime">signal</span>
             </h2>
-            <p class="mt-4 text-lg font-bold opacity-70">
-              Legendary panels from the forest feed. Share them. Stamp them.
-              Become them.
+            <p class="mt-4 text-base font-semibold text-hood-mist/65">
+              Hooded charts. Neon aim. Drop an arrow stamp anywhere on the page.
             </p>
           </div>
 
-          <div class="mt-14 grid gap-8 md:grid-cols-2">
-            <article
-              class="reveal meme-tilt rotate-[-1.5deg] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-pow-cream shadow-sticker"
-            >
-              <div class="aspect-square overflow-hidden bg-pow-lime">
+          <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="reveal meme-card rounded-2xl">
+              <div class="aspect-square overflow-hidden bg-hood-moss">
                 <img
-                  src="memes/meme-pedro.png"
-                  alt="Jimothy pointing — Just Like Pedro"
-                  class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                  src="memes/meme-aim.png"
+                  alt="Aim for every stock"
+                  class="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div class="border-t-4 border-pow-dark p-5 sm:p-6">
-                <p class="font-display text-sm text-pow-green">EPISODE 01</p>
-                <h3 class="mt-1 font-display text-3xl sm:text-4xl">
-                  Just Like Pedro
-                </h3>
-                <p class="mt-3 font-bold leading-relaxed opacity-80">
-                  When the timeline asked “who’s next?” Jimothy stepped out of
-                  Sherwood, pointed at the camera, and said the quiet part loud:
-                  he’s doing the rounds — just like Pedro. Screenshots
-                  everywhere. Caps locks optional.
+              <div class="border-t border-hood-lime/15 p-4">
+                <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-hood-lime">
+                  01
                 </p>
+                <h3 class="mt-1 font-display text-2xl tracking-wide">Aim For Every Stock</h3>
               </div>
             </article>
 
-            <article
-              class="reveal meme-tilt rotate-[1.5deg] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-pow-cream shadow-sticker md:mt-10"
-            >
-              <div class="aspect-square overflow-hidden bg-pow-peach">
+            <article class="reveal meme-card rounded-2xl sm:mt-8">
+              <div class="aspect-square overflow-hidden bg-hood-forest">
                 <img
-                  src="memes/meme-viral.png"
-                  alt="Jimothy going viral with paw stamps"
-                  class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                  src="memes/meme-crosschain.png"
+                  alt="Cross-chain liquidity"
+                  class="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div class="border-t-4 border-pow-dark p-5 sm:p-6">
-                <p class="font-display text-sm text-pow-green">EPISODE 02</p>
-                <h3 class="mt-1 font-display text-3xl sm:text-4xl">
-                  Viral rn
-                </h3>
-                <p class="mt-3 font-bold leading-relaxed opacity-80">
-                  Jimothy didn’t post once — he stamped the whole feed. Every
-                  swipe left another paw stamp. Friends tagged friends.
-                  Strangers became believers. The raccoon was officially going
-                  viral all over socials.
+              <div class="border-t border-hood-lime/15 p-4">
+                <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-hood-lime">
+                  02
                 </p>
+                <h3 class="mt-1 font-display text-2xl tracking-wide">Cross-Chain</h3>
               </div>
             </article>
 
-            <article
-              class="reveal meme-tilt rotate-[1deg] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-pow-cream shadow-sticker"
-            >
-              <div class="aspect-square overflow-hidden bg-[#dfffb2]">
+            <article class="reveal meme-card rounded-2xl">
+              <div class="aspect-square overflow-hidden bg-hood-moss">
                 <img
-                  src="memes/meme-moon.png"
-                  alt="Jimothy riding the STOCKHOOD rocket to the moon"
-                  class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                  src="memes/meme-trust.png"
+                  alt="Multi-chain trust layer"
+                  class="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div class="border-t-4 border-pow-dark p-5 sm:p-6">
-                <p class="font-display text-sm text-pow-green">EPISODE 03</p>
-                <h3 class="mt-1 font-display text-3xl sm:text-4xl">
-                  Moon Mission
-                </h3>
-                <p class="mt-3 font-bold leading-relaxed opacity-80">
-                  Cape flapping. Rocket roaring. Hat feather perfectly
-                  dramatic. Jimothy strapped into $STOCKHOOD and punched through
-                  the canopy — destination: wherever the vibes are highest.
-                  Buckle up, good folk.
+              <div class="border-t border-hood-lime/15 p-4">
+                <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-hood-lime">
+                  03
                 </p>
+                <h3 class="mt-1 font-display text-2xl tracking-wide">Trust Layer</h3>
               </div>
             </article>
 
-            <article
-              class="reveal meme-tilt rotate-[-1deg] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-pow-cream shadow-sticker md:mt-10"
-            >
-              <div class="aspect-square overflow-hidden bg-pow-lime">
+            <article class="reveal meme-card rounded-2xl sm:mt-8">
+              <div class="aspect-square overflow-hidden bg-hood-forest">
                 <img
-                  src="memes/meme-tokenomics.png"
-                  alt="Jimothy holding a 100% meme tokenomics sign"
-                  class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                  src="memes/meme-price.png"
+                  alt="On-chain vs real market price"
+                  class="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div class="border-t-4 border-pow-dark p-5 sm:p-6">
-                <p class="font-display text-sm text-pow-green">EPISODE 04</p>
-                <h3 class="mt-1 font-display text-3xl sm:text-4xl">
-                  100% Meme Math
-                </h3>
-                <p class="mt-3 font-bold leading-relaxed opacity-80">
-                  Asked for a whitepaper, Jimothy carved one on a stump:
-                  TOKENOMICS = 100% MEME. No suits. No fluff. Just a raccoon
-                  with a sign, a smirk, and a ticker named STOCKHOOD.
+              <div class="border-t border-hood-lime/15 p-4">
+                <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-hood-lime">
+                  04
                 </p>
+                <h3 class="mt-1 font-display text-2xl tracking-wide">On-Chain vs Real</h3>
               </div>
             </article>
 
-            <article
-              class="reveal meme-tilt rotate-[-1.2deg] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-pow-cream shadow-sticker"
-            >
-              <div class="aspect-square overflow-hidden bg-pow-peach">
+            <article class="reveal meme-card rounded-2xl">
+              <div class="aspect-square overflow-hidden bg-hood-forest">
                 <img
-                  src="memes/meme-summer.png"
-                  alt="Hot Jimothy Summer"
-                  class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                  src="memes/meme-unlock.png"
+                  alt="Unlocking tokenized equities"
+                  class="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div class="border-t-4 border-pow-dark p-5 sm:p-6">
-                <p class="font-display text-sm text-pow-green">EPISODE 05</p>
-                <h3 class="mt-1 font-display text-3xl sm:text-4xl">
-                  Hot Jimothy Summer
-                </h3>
-                <p class="mt-3 font-bold leading-relaxed opacity-80">
-                  Thumbs up locked. Cape dramatic. The season has a name now —
-                  Hot Jimothy Summer. Bring sunscreen and bags.
+              <div class="border-t border-hood-lime/15 p-4">
+                <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-hood-lime">
+                  05
                 </p>
+                <h3 class="mt-1 font-display text-2xl tracking-wide">Unlocking Equities</h3>
               </div>
             </article>
 
-            <article
-              class="reveal meme-tilt rotate-[1.2deg] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-pow-cream shadow-sticker md:mt-10"
-            >
-              <div class="aspect-square overflow-hidden bg-[#dfffb2]">
+            <article class="reveal meme-card rounded-2xl sm:mt-8">
+              <div class="aspect-square overflow-hidden bg-hood-moss">
                 <img
-                  src="memes/meme-ballard.png"
-                  alt="Ballard to the chain"
-                  class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                  src="memes/meme-liquidity.png"
+                  alt="Max liquidity min friction"
+                  class="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div class="border-t-4 border-pow-dark p-5 sm:p-6">
-                <p class="font-display text-sm text-pow-green">EPISODE 06</p>
-                <h3 class="mt-1 font-display text-3xl sm:text-4xl">
-                  Ballard to the Chain
-                </h3>
-                <p class="mt-3 font-bold leading-relaxed opacity-80">
-                  From Seattle’s Ballard streets to the chart — green candles,
-                  big phone, bigger vibes. The legend went onchain.
+              <div class="border-t border-hood-lime/15 p-4">
+                <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-hood-lime">
+                  06
                 </p>
+                <h3 class="mt-1 font-display text-2xl tracking-wide">Max Liquidity</h3>
               </div>
             </article>
 
-            <article
-              class="reveal meme-tilt rotate-[0.8deg] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-pow-cream shadow-sticker"
-            >
-              <div class="aspect-square overflow-hidden bg-pow-lime">
+            <article class="reveal meme-card rounded-2xl">
+              <div class="aspect-square overflow-hidden bg-hood-lime">
                 <img
-                  src="memes/meme-king.png"
-                  alt="King Jimothy"
-                  class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                  src="memes/meme-hood.png"
+                  alt="Stockhood brand mark"
+                  class="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div class="border-t-4 border-pow-dark p-5 sm:p-6">
-                <p class="font-display text-sm text-pow-green">EPISODE 07</p>
-                <h3 class="mt-1 font-display text-3xl sm:text-4xl">
-                  King Jimothy
-                </h3>
-                <p class="mt-3 font-bold leading-relaxed opacity-80">
-                  Trash-can throne. Tiny crown. Maximum royalty. All hail King
-                  Jimothy of the good folk.
+              <div class="border-t border-hood-lime/15 p-4">
+                <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-hood-lime">
+                  07
                 </p>
+                <h3 class="mt-1 font-display text-2xl tracking-wide">Hood Signal</h3>
               </div>
             </article>
 
-            <article
-              class="reveal meme-tilt rotate-[-0.8deg] overflow-hidden rounded-[2rem] border-4 border-pow-dark bg-pow-cream shadow-sticker md:mt-10"
-            >
-              <div class="aspect-square overflow-hidden bg-pow-peach">
+            <article class="reveal meme-card rounded-2xl sm:mt-8">
+              <div class="aspect-square overflow-hidden bg-hood-moss">
                 <img
-                  src="memes/meme-highfive.png"
-                  alt="Just Like Pedro high five"
-                  class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                  src="memes/meme-arrow.png"
+                  alt="To the chain"
+                  class="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div class="border-t-4 border-pow-dark p-5 sm:p-6">
-                <p class="font-display text-sm text-pow-green">EPISODE 08</p>
-                <h3 class="mt-1 font-display text-3xl sm:text-4xl">
-                  Just Like Pedro
-                </h3>
-                <p class="mt-3 font-bold leading-relaxed opacity-80">
-                  High five heard around the forest. Two raccoons, one vibe —
-                  doing the rounds just like Pedro.
+              <div class="border-t border-hood-lime/15 p-4">
+                <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-hood-lime">
+                  08
                 </p>
+                <h3 class="mt-1 font-display text-2xl tracking-wide">To The Chain</h3>
               </div>
             </article>
           </div>
@@ -907,291 +743,158 @@
       </section>
 
       <!-- TOKENOMICS -->
-      <section
-        id="tokenomics"
-        class="relative overflow-hidden border-y-2 border-pow-dark bg-pow-cream px-4 py-24 sm:px-6 lg:py-28"
-      >
-        <div
-          class="comic-lines pointer-events-none absolute -left-32 top-10 h-[380px] w-[380px] rounded-full opacity-30"
-          aria-hidden="true"
-        ></div>
-        <div
-          class="comic-lines pointer-events-none absolute -bottom-40 -right-28 h-[420px] w-[420px] rounded-full opacity-20"
-          aria-hidden="true"
-        ></div>
-
-        <div class="relative mx-auto max-w-6xl">
+      <section id="tokenomics" class="px-4 py-24 sm:px-6 lg:py-28">
+        <div class="mx-auto max-w-6xl">
           <div class="reveal text-center">
-            <p class="font-display text-2xl text-pow-green">THE BAG BREAKDOWN</p>
-            <h2 class="mt-2 font-display text-5xl sm:text-7xl">Tokenomics</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg font-bold opacity-70">
-              Fair launch math for Stockhood — 100% for the rounds.
+            <p class="section-label">Tokenomics</p>
+            <h2 class="mt-3 font-display text-5xl tracking-wide sm:text-6xl lg:text-7xl">
+              Fair launch <span class="text-hood-lime">math</span>
+            </h2>
+            <p class="mx-auto mt-4 max-w-xl text-base font-semibold text-hood-mist/65">
+              Built for cross-chain flow — clean supply, zero tax, full liquidity.
             </p>
           </div>
 
-          <div
-            class="reveal mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-3"
-          >
-            <div
-              class="tok-card rounded-3xl border-4 border-pow-dark bg-pow-lime px-5 py-6 text-center shadow-sticker"
-            >
-              <p class="text-xs font-black uppercase tracking-[0.2em] opacity-60">
+          <div class="reveal mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-3">
+            <div class="stat-panel rounded-2xl px-5 py-7 text-center">
+              <p class="text-xs font-extrabold uppercase tracking-[0.25em] text-hood-mist/45">
                 Ticker
               </p>
-              <p class="mt-2 font-display text-4xl sm:text-5xl">STOCKHOOD</p>
+              <p class="mt-2 font-display text-4xl tracking-wide text-hood-lime sm:text-5xl">
+                STOCKHOOD
+              </p>
             </div>
-            <div
-              class="tok-card rounded-3xl border-4 border-pow-dark bg-white px-5 py-6 text-center shadow-sticker"
-            >
-              <p class="text-xs font-black uppercase tracking-[0.2em] opacity-60">
+            <div class="stat-panel rounded-2xl px-5 py-7 text-center">
+              <p class="text-xs font-extrabold uppercase tracking-[0.25em] text-hood-mist/45">
                 Total Supply
               </p>
-              <p class="mt-2 font-display text-4xl sm:text-5xl">1B</p>
-              <p class="mt-1 text-sm font-black opacity-50">1,000,000,000</p>
+              <p class="mt-2 font-display text-4xl tracking-wide sm:text-5xl">1B</p>
+              <p class="mt-1 text-sm font-bold text-hood-mist/45">1,000,000,000</p>
             </div>
-            <div
-              class="tok-card rounded-3xl border-4 border-pow-dark bg-pow-peach px-5 py-6 text-center shadow-sticker"
-            >
-              <p class="text-xs font-black uppercase tracking-[0.2em] opacity-60">
+            <div class="stat-panel rounded-2xl px-5 py-7 text-center">
+              <p class="text-xs font-extrabold uppercase tracking-[0.25em] text-hood-mist/45">
                 Tax
               </p>
-              <p class="mt-2 font-display text-4xl sm:text-5xl">0 / 0</p>
-              <p class="mt-1 text-sm font-black opacity-50">Buy / Sell</p>
+              <p class="mt-2 font-display text-4xl tracking-wide sm:text-5xl">0 / 0</p>
+              <p class="mt-1 text-sm font-bold text-hood-mist/45">Buy / Sell</p>
             </div>
           </div>
 
           <div
-            class="reveal mx-auto mt-14 flex max-w-3xl flex-col items-center justify-center gap-8 sm:flex-row sm:gap-10 lg:gap-14"
+            class="reveal mx-auto mt-14 flex max-w-3xl flex-col items-center justify-center gap-10 sm:flex-row"
           >
-            <div class="tok-ring float shrink-0">
+            <div class="tok-ring float-slow shrink-0">
               <div class="tok-ring-inner">
-                <p class="font-display text-5xl leading-none text-pow-green">
-                  100%
-                </p>
-                <p
-                  class="mt-1 text-sm font-black uppercase tracking-wide text-pow-dark"
-                >
+                <p class="font-display text-5xl leading-none text-hood-lime">100%</p>
+                <p class="mt-1 text-xs font-extrabold uppercase tracking-wider text-hood-mist/60">
                   Liquidity
                 </p>
               </div>
             </div>
-
             <div
-              class="relative w-full max-w-[240px] shrink-0 overflow-hidden rounded-[1.75rem] border-4 border-pow-dark bg-white p-2 shadow-sticker rotate-[3deg] sm:max-w-[260px]"
+              class="w-full max-w-[260px] overflow-hidden rounded-2xl border border-hood-lime/30"
             >
               <img
-                src="memes/meme-tokenomics.png"
-                alt="Jimothy tokenomics meme"
-                class="aspect-square w-full rounded-[1.25rem] object-cover"
+                src="memes/meme-liquidity.png"
+                alt="Stockhood liquidity meme"
+                class="aspect-square w-full object-cover"
                 loading="lazy"
               />
-              <span
-                class="absolute -right-2 -top-3 rotate-12 rounded-xl border-2 border-pow-dark bg-pow-lime px-3 py-1 font-display text-lg shadow-sticker-sm"
-                >FAIR!</span
-              >
             </div>
           </div>
         </div>
       </section>
 
+      <!-- HOW TO BUY -->
       <section
         id="how-to-buy"
-        class="relative overflow-x-clip border-y-2 border-pow-dark bg-pow-dark px-4 py-24 pt-28 text-pow-cream sm:px-6 lg:py-28 lg:pt-32"
+        class="border-y border-hood-lime/15 bg-hood-forest px-4 py-24 sm:px-6 lg:py-28"
       >
-        <div class="relative mx-auto max-w-7xl">
+        <div class="mx-auto max-w-7xl">
           <div class="reveal text-center">
-            <div
-              class="mb-4 inline-flex items-center gap-2 rounded-full border-2 border-pow-lime/40 bg-pow-lime/10 px-4 py-2"
-            >
-              <img
-                src="logo.png"
-                alt=""
-                class="h-7 w-7 rounded-full border border-pow-lime object-cover"
-                aria-hidden="true"
-              />
-              <p class="font-display text-lg text-pow-lime sm:text-2xl">
-                FOUR LITTLE STEPS
-              </p>
-            </div>
-            <h2 class="mt-2 font-display text-5xl sm:text-6xl lg:text-7xl">
-              How to Buy <span class="text-pow-lime">$STOCKHOOD</span>
+            <p class="section-label">How to Buy</p>
+            <h2 class="mt-3 font-display text-5xl tracking-wide sm:text-6xl lg:text-7xl">
+              Four steps to <span class="text-hood-lime">$STOCKHOOD</span>
             </h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg font-bold opacity-70">
-              Grab Robinhood ETH and join Stockhood in four easy steps.
+            <p class="mx-auto mt-4 max-w-xl text-base font-semibold text-hood-mist/65">
+              Grab Robinhood ETH and enter the trust layer.
             </p>
           </div>
 
-          <div class="mt-14 grid gap-8 md:grid-cols-2 xl:grid-cols-4 xl:gap-6">
-            <article
-              class="buy-card reveal group relative rounded-3xl border-2 border-pow-cream/80 bg-[#183f30] p-6"
-            >
-              <span class="buy-connector" aria-hidden="true"></span>
-              <span
-                class="buy-step-num absolute right-3 top-3 grid h-14 w-14 rotate-6 place-items-center rounded-full border-2 border-pow-dark bg-pow-lime font-display text-3xl text-pow-dark shadow-sticker-sm"
-                >1</span
+          <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <article class="buy-step reveal rounded-2xl p-6">
+              <div
+                class="mb-5 grid h-14 w-14 place-items-center rounded-xl border border-hood-lime/30 bg-white"
               >
-              <div class="buy-icon bg-white">
-                <img
-                  src="icons/metamask.svg"
-                  alt="MetaMask wallet"
-                  width="48"
-                  height="48"
-                />
+                <img src="icons/metamask.svg" alt="MetaMask" class="h-9 w-9" />
               </div>
-              <h3 class="mt-5 font-display text-3xl text-pow-lime">
-                Get a Wallet
-              </h3>
-              <p class="mt-3 font-bold leading-relaxed opacity-75">
-                Set up MetaMask or any Web3 wallet and keep your secret recovery
-                phrase somewhere safe.
+              <p class="font-display text-4xl text-hood-lime/40">01</p>
+              <h3 class="mt-1 font-display text-3xl tracking-wide">Get a Wallet</h3>
+              <p class="mt-3 text-sm font-semibold leading-relaxed text-hood-mist/65">
+                Set up MetaMask or any Web3 wallet and keep your recovery phrase safe.
               </p>
-              <div class="mt-5 flex flex-wrap items-center gap-2">
-                <span
-                  class="rounded-full border border-pow-lime/30 bg-pow-lime/10 px-3 py-1 text-xs font-black text-pow-lime"
-                  >MetaMask</span
-                >
-                <span
-                  class="rounded-full border border-pow-cream/20 px-3 py-1 text-xs font-black opacity-60"
-                  >Web3</span
-                >
-              </div>
             </article>
 
-            <article
-              class="buy-card reveal group relative rounded-3xl border-2 border-pow-cream/80 bg-[#183f30] p-6"
-            >
-              <span class="buy-connector" aria-hidden="true"></span>
-              <span
-                class="buy-step-num absolute right-3 top-3 grid h-14 w-14 -rotate-6 place-items-center rounded-full border-2 border-pow-dark bg-pow-lime font-display text-3xl text-pow-dark shadow-sticker-sm"
-                style="animation-delay: -0.6s"
-                >2</span
+            <article class="buy-step reveal rounded-2xl p-6">
+              <div
+                class="mb-5 grid h-14 w-14 place-items-center overflow-hidden rounded-xl border border-hood-lime/30"
               >
-              <div class="buy-icon buy-icon-fill">
                 <img
                   src="icons/robinhood-chain.png"
                   alt="Robinhood Chain"
-                  width="72"
-                  height="72"
+                  class="h-full w-full object-cover"
                 />
               </div>
-              <h3 class="mt-5 font-display text-3xl text-pow-lime">
-                Add Robinhood
-              </h3>
-              <p class="mt-3 font-bold leading-relaxed opacity-75">
-                Connect to Robinhood Chain, then fund your wallet with ETH for
-                the swap and gas.
+              <p class="font-display text-4xl text-hood-lime/40">02</p>
+              <h3 class="mt-1 font-display text-3xl tracking-wide">Add Robinhood</h3>
+              <p class="mt-3 text-sm font-semibold leading-relaxed text-hood-mist/65">
+                Connect to Robinhood Chain, then fund your wallet with ETH for gas and swap.
               </p>
-              <div class="mt-5 flex flex-wrap items-center gap-2">
-                <span
-                  class="rounded-full border border-pow-lime/30 bg-pow-lime/10 px-3 py-1 text-xs font-black text-pow-lime"
-                  >Robinhood Chain</span
-                >
-                <span
-                  class="rounded-full border border-pow-cream/20 px-3 py-1 text-xs font-black opacity-60"
-                  >ETH</span
-                >
-              </div>
             </article>
 
-            <article
-              class="buy-card reveal group relative rounded-3xl border-2 border-pow-cream/80 bg-[#183f30] p-6"
-            >
-              <span class="buy-connector" aria-hidden="true"></span>
-              <span
-                class="buy-step-num absolute right-3 top-3 grid h-14 w-14 rotate-6 place-items-center rounded-full border-2 border-pow-dark bg-pow-lime font-display text-3xl text-pow-dark shadow-sticker-sm"
-                style="animation-delay: -1.2s"
-                >3</span
+            <article class="buy-step reveal rounded-2xl p-6">
+              <div
+                class="mb-5 grid h-14 w-14 place-items-center overflow-hidden rounded-xl border border-hood-lime/30 bg-black"
               >
-              <div class="buy-icon buy-icon-fill bg-black">
                 <img
                   src="icons/uniswap.png"
                   alt="Uniswap"
-                  width="72"
-                  height="72"
+                  class="h-full w-full object-cover"
                 />
               </div>
-              <h3 class="mt-5 font-display text-3xl text-pow-lime">
-                Open Uniswap
-              </h3>
-              <p class="mt-3 font-bold leading-relaxed opacity-75">
-                Tap Buy Now, connect your wallet, and paste the official
-                STOCKHOOD contract address.
+              <p class="font-display text-4xl text-hood-lime/40">03</p>
+              <h3 class="mt-1 font-display text-3xl tracking-wide">Open Uniswap</h3>
+              <p class="mt-3 text-sm font-semibold leading-relaxed text-hood-mist/65">
+                Tap Buy Now, connect your wallet, and paste the official STOCKHOOD contract.
               </p>
-              <div class="mt-5 flex flex-wrap items-center gap-2">
-                <span
-                  class="rounded-full border border-[#FF007A]/40 bg-[#FF007A]/15 px-3 py-1 text-xs font-black text-[#ff7ab8]"
-                  >Uniswap</span
-                >
-                <span
-                  class="rounded-full border border-pow-cream/20 px-3 py-1 text-xs font-black opacity-60"
-                  >Swap</span
-                >
-              </div>
             </article>
 
-            <article
-              class="buy-card reveal group relative rounded-3xl border-2 border-pow-lime bg-[#1a4534] p-6"
-            >
-              <span
-                class="buy-step-num absolute right-3 top-3 grid h-14 w-14 -rotate-6 place-items-center rounded-full border-2 border-pow-dark bg-pow-peach font-display text-3xl text-pow-dark shadow-sticker-sm"
-                style="animation-delay: -1.8s"
-                >4</span
+            <article class="buy-step reveal rounded-2xl border-hood-lime/40 p-6">
+              <div
+                class="mb-5 grid h-14 w-14 place-items-center overflow-hidden rounded-xl border border-hood-lime/50 bg-hood-lime"
               >
-              <div class="buy-icon buy-icon-logo border-pow-lime bg-pow-lime">
-                <img
-                  src="logo.png"
-                  alt="Stockhood"
-                  class="scale-110 object-cover"
-                />
+                <img src="logo.jpg" alt="Stockhood" class="h-full w-full object-cover" />
               </div>
-              <h3 class="mt-5 font-display text-3xl text-pow-lime">
-                Swap &amp; Ride!
-              </h3>
-              <p class="mt-3 font-bold leading-relaxed opacity-75">
-                Choose your ETH amount, confirm the swap, and ride the wave with
-                Stockhood.
+              <p class="font-display text-4xl text-hood-lime/40">04</p>
+              <h3 class="mt-1 font-display text-3xl tracking-wide">Swap &amp; Aim</h3>
+              <p class="mt-3 text-sm font-semibold leading-relaxed text-hood-mist/65">
+                Choose your ETH amount, confirm the swap, and ride tokenized equities live.
               </p>
-              <div class="mt-5 flex flex-wrap items-center gap-2">
-                <span
-                  class="rounded-full border border-pow-lime/40 bg-pow-lime/15 px-3 py-1 text-xs font-black text-pow-lime"
-                  >$STOCKHOOD</span
-                >
-                <span
-                  class="rounded-full border border-pow-peach/40 bg-pow-peach/20 px-3 py-1 text-xs font-black text-pow-peach"
-                  >Paw stamp</span
-                >
-              </div>
             </article>
           </div>
 
-          <div class="reveal mt-14 flex flex-col items-center gap-5">
-            <div
-              class="flex flex-wrap items-center justify-center gap-3 rounded-full border border-pow-lime/25 bg-pow-lime/5 px-5 py-3"
-            >
-              <img src="icons/metamask.svg" alt="" class="h-8 w-8 rounded-lg bg-white p-1" aria-hidden="true" />
-              <span class="font-display text-lg text-pow-lime">→</span>
-              <img src="icons/robinhood-chain.png" alt="" class="h-8 w-8 rounded-lg object-cover" aria-hidden="true" />
-              <span class="font-display text-lg text-pow-lime">→</span>
-              <img src="icons/uniswap.png" alt="" class="h-8 w-8 rounded-lg bg-black object-cover" aria-hidden="true" />
-              <span class="font-display text-lg text-pow-lime">→</span>
-              <img
-                src="logo.png"
-                alt=""
-                class="h-8 w-8 rounded-full border-2 border-pow-lime object-cover"
-                aria-hidden="true"
-              />
-            </div>
+          <div class="reveal mt-12 flex justify-center">
             <a
               href="https://app.uniswap.org/swap?chain=robinhood&outputCurrency=0xcomingsoon"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-3 rounded-2xl border-2 border-pow-cream bg-pow-lime px-8 py-4 text-xl font-black text-pow-dark shadow-[6px_7px_0_#25C76F] transition hover:-translate-y-1 hover:shadow-[8px_10px_0_#25C76F]"
+              class="btn-lime inline-flex items-center gap-3 rounded-full px-8 py-4 text-lg font-extrabold uppercase tracking-wide"
             >
-              START THE SWAP
+              Start the Swap
               <img
-                src="logo.png"
+                src="logo.jpg"
                 alt=""
-                class="h-8 w-8 rounded-full border-2 border-pow-dark object-cover"
+                class="h-8 w-8 rounded-lg border border-hood-forest/30 object-cover"
                 aria-hidden="true"
               />
             </a>
@@ -1199,62 +902,63 @@
         </div>
       </section>
 
+      <!-- CONTRACT -->
       <section class="px-4 py-24 sm:px-6">
-        <div class="reveal mx-auto max-w-5xl text-center">
-          <p class="font-display text-2xl text-pow-green">THE ONE TRUE CA</p>
-          <h2 class="mt-2 font-display text-5xl sm:text-7xl">
-            Official Contract
+        <div class="reveal mx-auto max-w-4xl text-center">
+          <p class="section-label">Contract</p>
+          <h2 class="mt-3 font-display text-5xl tracking-wide sm:text-6xl lg:text-7xl">
+            Official <span class="text-hood-lime">CA</span>
           </h2>
-          <p class="mt-4 text-lg font-bold opacity-70">
+          <p class="mt-4 text-base font-semibold text-hood-mist/65">
             Always verify the contract before swapping.
           </p>
           <div
-            class="mx-auto mt-8 flex max-w-3xl items-center gap-3 rounded-2xl border-2 border-pow-dark bg-white p-3 pl-5 shadow-sticker"
+            class="mx-auto mt-8 flex max-w-3xl items-center gap-3 rounded-2xl border border-hood-lime/25 bg-hood-pine/80 p-3 pl-5 backdrop-blur-md"
           >
             <code
               id="contract-address"
-              class="min-w-0 flex-1 truncate text-left text-base font-black sm:text-lg"
+              class="min-w-0 flex-1 truncate text-left text-base font-bold text-hood-mist sm:text-lg"
               >0xcomingsoon</code
             >
             <button
               id="copy-contract"
               type="button"
-              class="shrink-0 rounded-xl border-2 border-pow-dark bg-pow-lime px-5 py-3 font-black transition hover:bg-pow-green hover:text-white"
+              class="btn-lime shrink-0 rounded-xl px-5 py-3 font-extrabold uppercase tracking-wide"
             >
-              COPY CA
+              Copy CA
             </button>
           </div>
           <p
             id="copy-status"
-            class="mt-4 h-6 font-black text-pow-green"
+            class="mt-4 h-6 font-bold text-hood-lime"
             role="status"
             aria-live="polite"
           ></p>
         </div>
       </section>
 
-      <section
-        id="chart"
-        class="border-y-2 border-pow-dark bg-pow-green px-4 py-24 sm:px-6"
-      >
+      <!-- CHART -->
+      <section id="chart" class="border-t border-hood-lime/15 bg-hood-moss/40 px-4 py-24 sm:px-6">
         <div class="mx-auto max-w-7xl">
           <div
             class="reveal mb-9 flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end"
           >
             <div>
-              <p class="font-display text-2xl">THE VIRAL METER</p>
-              <h2 class="font-display text-6xl sm:text-7xl">Live Chart</h2>
+              <p class="section-label">Live Feed</p>
+              <h2 class="mt-2 font-display text-5xl tracking-wide sm:text-6xl lg:text-7xl">
+                On-chain <span class="text-hood-lime">chart</span>
+              </h2>
             </div>
             <a
               href="https://dexscreener.com/robinhood/0xcomingsoon"
               target="_blank"
               rel="noopener noreferrer"
-              class="rounded-xl border-2 border-pow-dark bg-pow-cream px-5 py-3 font-black shadow-sticker-sm transition hover:-translate-y-1"
-              >OPEN DEXSCREENER ↗</a
+              class="btn-ghost rounded-full px-5 py-3 text-sm font-extrabold uppercase tracking-wide text-hood-mist"
+              >Open DexScreener ↗</a
             >
           </div>
           <div
-            class="reveal overflow-hidden rounded-3xl border-4 border-pow-dark bg-[#111] shadow-[10px_12px_0_#102E22]"
+            class="reveal overflow-hidden rounded-2xl border border-hood-lime/25 bg-[#0b0f0c] shadow-[0_0_60px_#c8ff0012]"
           >
             <iframe
               title="Stockhood live DexScreener chart"
@@ -1268,107 +972,113 @@
       </section>
     </main>
 
-    <footer
-      class="border-t-2 border-pow-dark bg-pow-dark px-4 py-10 text-pow-cream sm:px-6"
-    >
+    <footer class="border-t border-hood-lime/15 bg-hood-forest px-4 py-10 sm:px-6">
       <div
         class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left"
       >
         <div class="flex items-center gap-3">
           <img
-            src="logo.png"
+            src="logo.jpg"
             alt=""
-            class="h-12 w-12 rounded-full border-2 border-pow-lime object-cover"
+            class="h-12 w-12 rounded-xl border border-hood-lime/40 object-cover"
             aria-hidden="true"
           />
           <div>
-            <p class="font-display text-3xl text-pow-lime sm:text-4xl">
-             STOCKHOOD
+            <p class="font-display text-3xl tracking-wide text-hood-lime sm:text-4xl">
+              STOCKHOOD
+            </p>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-hood-mist/45">
+              Aim for every stock
             </p>
           </div>
         </div>
-        <div class="flex gap-3">
-          <a
-            href="https://x.com/i/communities/2011628271889449061"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="grid h-10 w-10 place-items-center overflow-hidden rounded-full border border-pow-cream/40 bg-[#111] transition hover:border-pow-lime"
-            aria-label="X Community"
-          >
-            <img src="x.png" alt="X" class="h-full w-full object-cover" />
-          </a>
-        </div>
+        <a
+          href="https://x.com/i/communities/2011628271889449061"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-hood-mist/25 bg-[#111] transition hover:border-hood-lime"
+          aria-label="X Community"
+        >
+          <img src="x.png" alt="X" class="h-full w-full object-cover" />
+        </a>
       </div>
     </footer>
 
-    <div id="cat-cursor" aria-hidden="true">
+    <!-- Aim cursor -->
+    <div id="aim-cursor" aria-hidden="true">
       <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="32" cy="40" rx="14" ry="12" fill="#102E22" />
-        <circle cx="18" cy="22" r="7" fill="#102E22" />
-        <circle cx="32" cy="16" r="7.5" fill="#102E22" />
-        <circle cx="46" cy="22" r="7" fill="#102E22" />
-        <ellipse cx="32" cy="40" rx="10" ry="8" fill="#C9FF38" opacity="0.35" />
+        <path
+          d="M10 44 L32 12 L40 28 L54 10"
+          stroke="#C8FF00"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M44 10 H54 V20"
+          stroke="#C8FF00"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <circle cx="32" cy="40" r="3" fill="#C8FF00" />
       </svg>
     </div>
 
     <script>
-      const PAW_SVG = `
+      const ARROW_SVG = `
         <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="32" cy="42" rx="15" ry="13" fill="currentColor"/>
-          <circle cx="16" cy="22" r="7.5" fill="currentColor"/>
-          <circle cx="32" cy="15" r="8" fill="currentColor"/>
-          <circle cx="48" cy="22" r="7.5" fill="currentColor"/>
+          <path d="M8 48 L28 22 L36 34 L56 10" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 10 H56 V24" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="10" y="50" width="6" height="8" fill="currentColor" opacity="0.55"/>
+          <rect x="20" y="44" width="6" height="14" fill="currentColor" opacity="0.75"/>
+          <rect x="30" y="38" width="6" height="20" fill="currentColor"/>
         </svg>`;
-      const PAW_COLORS = ["#102E22", "#25C76F", "#C9FF38", "#FFB076"];
+      const ARROW_COLORS = ["#C8FF00", "#E8FF66", "#25C76F", "#F4FFE8"];
 
       const copyButton = document.getElementById("copy-contract");
       const copyStatus = document.getElementById("copy-status");
       const contractAddress = document
         .getElementById("contract-address")
         .textContent.trim();
-      const catCursor = document.getElementById("cat-cursor");
+      const aimCursor = document.getElementById("aim-cursor");
 
-      document.querySelectorAll("a, button").forEach((element) => {
-        element.classList.add("star-hover");
-      });
-
-      /* Jimothy   — stamp on click */
-      function stampPaw(x, y) {
+      function stampArrow(x, y) {
         const stamp = document.createElement("div");
-        stamp.className = "paw-stamp";
+        stamp.className = "arrow-stamp";
         stamp.style.left = `${x}px`;
         stamp.style.top = `${y}px`;
-        stamp.style.setProperty("--rot", `${-30 + Math.random() * 60}deg`);
-        stamp.style.color = PAW_COLORS[Math.floor(Math.random() * PAW_COLORS.length)];
-        stamp.innerHTML = PAW_SVG;
+        stamp.style.setProperty("--rot", `${-50 + Math.random() * 40}deg`);
+        stamp.style.color =
+          ARROW_COLORS[Math.floor(Math.random() * ARROW_COLORS.length)];
+        stamp.innerHTML = ARROW_SVG;
         document.body.appendChild(stamp);
         stamp.addEventListener("animationend", () => stamp.remove());
       }
 
       document.addEventListener("pointerdown", (e) => {
         if (e.target.closest("a, button, input, textarea, iframe")) return;
-        stampPaw(e.clientX, e.clientY);
-        catCursor.classList.add("is-press");
-        setTimeout(() => catCursor.classList.remove("is-press"), 140);
+        stampArrow(e.clientX, e.clientY);
+        aimCursor.classList.add("is-press");
+        setTimeout(() => aimCursor.classList.remove("is-press"), 140);
       });
 
       if (window.matchMedia("(pointer: fine)").matches) {
         window.addEventListener("pointermove", (event) => {
-          catCursor.style.left = `${event.clientX}px`;
-          catCursor.style.top = `${event.clientY}px`;
+          aimCursor.style.left = `${event.clientX}px`;
+          aimCursor.style.top = `${event.clientY}px`;
         });
 
         document.querySelectorAll("a, button, img").forEach((element) => {
           element.addEventListener("pointerenter", () =>
-            catCursor.classList.add("is-hovering")
+            aimCursor.classList.add("is-hovering")
           );
           element.addEventListener("pointerleave", () =>
-            catCursor.classList.remove("is-hovering")
+            aimCursor.classList.remove("is-hovering")
           );
         });
       }
 
-      /* Scroll reveal */
       const io = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -1384,11 +1094,11 @@
 
       copyButton.addEventListener("click", async () => {
         const rect = copyButton.getBoundingClientRect();
-        stampPaw(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        stampArrow(rect.left + rect.width / 2, rect.top + rect.height / 2);
         try {
           await navigator.clipboard.writeText(contractAddress);
-          copyButton.textContent = "COPIED!";
-          copyStatus.textContent = "Paw stamped — contract copied!";
+          copyButton.textContent = "Copied!";
+          copyStatus.textContent = "Arrow locked — contract copied!";
         } catch {
           const textArea = document.createElement("textarea");
           textArea.value = contractAddress;
@@ -1396,11 +1106,11 @@
           textArea.select();
           document.execCommand("copy");
           textArea.remove();
-          copyButton.textContent = "COPIED!";
-          copyStatus.textContent = "Paw stamped — contract copied!";
+          copyButton.textContent = "Copied!";
+          copyStatus.textContent = "Arrow locked — contract copied!";
         }
         setTimeout(() => {
-          copyButton.textContent = "COPY CA";
+          copyButton.textContent = "Copy CA";
           copyStatus.textContent = "";
         }, 2200);
       });
